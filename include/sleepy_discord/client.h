@@ -575,6 +575,9 @@ namespace SleepyDiscord {
 		//Rest events
 		virtual void onDepletedRequestSupply(const Route::Bucket& bucket, double timeTilReset);
 		virtual void onExceededRateLimit(bool global, double timeTilRetry, Request request, bool& continueRequest);
+		
+		// Allow derived classes to set bot flag for proper token authorization
+		inline void setBotFlag(bool isBot) { bot = isBot; }
 
 		/* list of events
 		READY
